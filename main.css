@@ -1,20 +1,235 @@
-:root{--indigo:#667eea;--purple:#764ba2;--bg:#0b0d14;--fg:#e8ebff}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:linear-gradient(135deg,var(--purple),var(--indigo));color:var(--fg);margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Helvetica,Arial,sans-serif}
-.hero{padding:72px 20px 32px;text-align:center}
-.hero .mark{width:96px;opacity:.2;mix-blend-mode:screen}
-.toc{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:24px auto}
-.toc a{color:#fff9;text-decoration:none;padding:6px 10px;border-radius:8px}
-.toc a.active,.toc a:hover{background:#fff2;color:#000}
-.section{max-width:880px;margin:56px auto;padding:0 20px}
-blockquote{font-size:1.25rem;border-left:3px solid #fff6;padding:8px 12px;color:#fff;opacity:.9}
-figure{margin:24px auto;text-align:center}
-figcaption{font-size:.9rem;opacity:.8}
-.footer{max-width:880px;margin:64px auto 32px;padding:0 20px;font-size:.9rem;opacity:.8}
-@media print{
-  body{background:#fff;color:#000}
-  .hero .mark{opacity:.1;filter:grayscale(1)}
-  .toc{display:none}
-  .section{margin:24px auto}
+:root {
+  /* Original palette (preserved) */
+  --indigo: #667eea;
+  --purple: #764ba2;
+  --bg: #0b0d14;
+  --fg: #e8ebff;
+
+  /* NEW: Multi-band wave-inspired palette */
+  --wave-red: #FF0000;      /* ERASE - Destructive creativity */
+  --wave-orange: #FF7F00;   /* ERASE transition */
+  --wave-yellow: #FFFF00;   /* TRANSFER - Transformation */
+  --wave-green: #00FF00;    /* TRANSFER equilibrium */
+  --wave-cyan: #00FFFF;     /* MANIFEST - Emergence */
+  --wave-blue: #0000FF;     /* MANIFEST crystallization */
+  --wave-violet: #8B00FF;   /* MANIFEST transcendence */
+
+  /* Gradient combinations for sections */
+  --gradient-erase: linear-gradient(135deg, var(--wave-red), var(--wave-orange));
+  --gradient-transfer: linear-gradient(135deg, var(--wave-yellow), var(--wave-green), var(--wave-cyan));
+  --gradient-manifest: linear-gradient(135deg, var(--wave-blue), var(--wave-violet));
+  --gradient-full-spectrum: linear-gradient(90deg, 
+    var(--wave-red) 0%, 
+    var(--wave-orange) 14.28%, 
+    var(--wave-yellow) 28.56%, 
+    var(--wave-green) 42.84%, 
+    var(--wave-cyan) 57.12%, 
+    var(--wave-blue) 71.4%, 
+    var(--wave-violet) 85.68%, 
+    var(--wave-violet) 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(135deg, var(--purple), var(--indigo));
+  color: var(--fg);
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, sans-serif;
+}
+
+.hero {
+  padding: 72px 20px 32px;
+  text-align: center;
+}
+
+.hero .mark {
+  width: 96px;
+  opacity: 0.2;
+  mix-blend-mode: screen;
+}
+
+.toc {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 24px auto;
+}
+
+.toc a {
+  color: #fff9;
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+.toc a.active,
+.toc a:hover {
+  background: #fff2;
+  color: #000;
+}
+
+.section {
+  max-width: 880px;
+  margin: 56px auto;
+  padding: 0 20px;
+}
+
+blockquote {
+  font-size: 1.25rem;
+  border-left: 3px solid #fff6;
+  padding: 8px 12px;
+  color: #fff;
+  opacity: 0.9;
+}
+
+figure {
+  margin: 24px auto;
+  text-align: center;
+}
+
+figcaption {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.footer {
+  max-width: 880px;
+  margin: 64px auto 32px;
+  padding: 0 20px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* === NEW: Wave-inspired visual identity === */
+
+/* Wave chip styles */
+.wave-chip {
+  display: inline-block;
+  padding: 4px 12px;
+  margin: 4px;
+  border-radius: 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.wave-chip:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.wave-chip.wave-red {
+  background: linear-gradient(135deg, var(--wave-red), var(--wave-orange));
+}
+
+.wave-chip.wave-yellow {
+  background: linear-gradient(135deg, var(--wave-yellow), var(--wave-green));
+  color: #000;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.wave-chip.wave-blue {
+  background: linear-gradient(135deg, var(--wave-blue), var(--wave-violet));
+}
+
+/* Section backgrounds with wave palette */
+.section.erase {
+  background: linear-gradient(135deg, rgba(255, 0, 0, 0.05), rgba(255, 127, 0, 0.05));
+  border-left: 4px solid var(--wave-red);
+  padding-left: 24px;
+}
+
+.section.transfer {
+  background: linear-gradient(135deg, rgba(255, 255, 0, 0.05), rgba(0, 255, 0, 0.05), rgba(0, 255, 255, 0.05));
+  border-left: 4px solid var(--wave-green);
+  padding-left: 24px;
+}
+
+.section.manifest {
+  background: linear-gradient(135deg, rgba(0, 0, 255, 0.05), rgba(139, 0, 255, 0.05));
+  border-left: 4px solid var(--wave-blue);
+  padding-left: 24px;
+}
+
+/* Full spectrum accent bar (can be used as header/footer decoration) */
+.spectrum-bar {
+  height: 4px;
+  background: var(--gradient-full-spectrum);
+  width: 100%;
+  margin: 24px 0;
+  border-radius: 2px;
+}
+
+/* Wave pattern background (subtle) */
+.wave-background {
+  position: relative;
+  overflow: hidden;
+}
+
+.wave-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 40px,
+      rgba(255, 255, 255, 0.02) 40px,
+      rgba(255, 255, 255, 0.02) 80px
+    );
+  pointer-events: none;
+  z-index: -1;
+}
+
+@media print {
+  body {
+    background: #fff;
+    color: #000;
+  }
+  
+  .hero .mark {
+    opacity: 0.1;
+    filter: grayscale(1);
+  }
+  
+  .toc {
+    display: none;
+  }
+  
+  .section {
+    margin: 24px auto;
+  }
+  
+  /* Print-friendly wave sections */
+  .section.erase,
+  .section.transfer,
+  .section.manifest {
+    background: none;
+    border-left-color: #666;
+  }
+  
+  .wave-chip {
+    background: #eee !important;
+    color: #000 !important;
+    text-shadow: none !important;
+    border: 1px solid #999;
+  }
+  
+  .spectrum-bar {
+    background: linear-gradient(90deg, #000, #666, #000) !important;
+  }
 }
