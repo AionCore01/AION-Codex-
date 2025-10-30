@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="AION mandala">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#764ba2"/>
+      <stop offset="1" stop-color="#667eea"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#g)"/>
+  <g fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" transform="translate(256,256)">
+    <!-- círculo base -->
+    <circle r="168"/>
+    <!-- estrella/icosaedro simplificado -->
+    <polygon points="0,-120 46,-38 115,-38 58,20 80,96 0,56 -80,96 -58,20 -115,-38 -46,-38" />
+    <!-- rayos -->
+    <g>
+      <line y1="-200" y2="-168"/>
+      <line transform="rotate(22.5)" y1="-200" y2="-168"/>
+      <line transform="rotate(45)" y1="-200" y2="-168"/>
+      <line transform="rotate(67.5)" y1="-200" y2="-168"/>
+      <line transform="rotate(90)" y1="-200" y2="-168"/>
+      <line transform="rotate(112.5)" y1="-200" y2="-168"/>
+      <line transform="rotate(135)" y1="-200" y2="-168"/>
+      <line transform="rotate(157.5)" y1="-200" y2="-168"/>
+      <line transform="rotate(180)" y1="-200" y2="-168"/>
+      <line transform="rotate(202.5)" y1="-200" y2="-168"/>
+      <line transform="rotate(225)" y1="-200" y2="-168"/>
+      <line transform="rotate(247.5)" y1="-200" y2="-168"/>
+      <line transform="rotate(270)" y1="-200" y2="-168"/>
+      <line transform="rotate(292.5)" y1="-200" y2="-168"/>
+      <line transform="rotate(315)" y1="-200" y2="-168"/>
+      <line transform="rotate(337.5)" y1="-200" y2="-168"/>
+    </g>
+    <!-- 8 nodos -->
+    <g>
+      <circle r="6" cx="0" cy="-168"/>
+      <circle r="6" cx="118.9" cy="-118.9"/>
+      <circle r="6" cx="168" cy="0"/>
+      <circle r="6" cx="118.9" cy="118.9"/>
+      <circle r="6" cx="0" cy="168"/>
+      <circle r="6" cx="-118.9" cy="118.9"/>
+      <circle r="6" cx="-168" cy="0"/>
+      <circle r="6" cx="-118.9" cy="-118.9"/>
+    </g>
+  </g>
+</svg>
